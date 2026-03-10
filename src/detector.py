@@ -1,10 +1,3 @@
-"""Functions for running object detection on frames.
-
-This module takes a network object (from model.py) and applies it to video frames.
-It returns a list of detections where each detection is a tuple with the class name
-and bounding box coordinates.
-"""
-
 import cv2
 import numpy as np
 from model import CLASSES
@@ -38,3 +31,4 @@ def detect_objects(net, frame, confidence_threshold=0.2):
             (startX, startY, endX, endY) = box.astype("int")
             results.append((label, conf, (startX, startY, endX, endY)))
     return results
+
