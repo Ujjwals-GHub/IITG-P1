@@ -6,8 +6,7 @@ import time
 # ======================
 # LOAD MODEL
 # ======================
-#model = YOLO(r"C:\Users\ujjwa\Desktop\project\3rd\runs\detect\train6\weights\best.pt")
-model = YOLO(r"C:\Users\ujjwa\Desktop\project\3rd\runscol\detect\train3\weights\best.pt")
+model = YOLO(r"C:\Users\ujjwa\Desktop\project\3rd\runs\detect\train6\weights\best.pt")
 
 cap = cv2.VideoCapture(0)
 
