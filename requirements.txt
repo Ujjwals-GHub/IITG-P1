@@ -1,5 +1,4 @@
-opencv-python
-numpy
-torch
 ultralytics
-pyttsx3
+opencv-python
+pywin32
+torch
