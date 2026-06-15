@@ -40,7 +40,7 @@ while True:
     
     # Only run the YOLO model and drawing logic on every 3rd frame
     if frame_counter % 3 != 0:
-        cv2.imshow("Blind Assistant", frame)
+        cv2.imshow("SHRAVAN", frame)
         key = cv2.waitKey(1) & 0xFF
         if key == 27 or key == ord('q') or key == ord('Q'):
             break
@@ -99,7 +99,7 @@ while True:
     # ======================
     # SHOW
     # ======================
-    cv2.imshow("Blind Assistant", frame)
+    cv2.imshow("SHRAVAN", frame)
 
     key = cv2.waitKey(1) & 0xFF
     if key == 27 or key == ord('q') or key == ord('Q'):
