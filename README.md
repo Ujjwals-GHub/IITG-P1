@@ -1,4 +1,5 @@
-# 🦯 Blind Assistant — Real-Time Object Detection & Voice Guidance
+# 🦯 Shravan — Real-Time Object Detection & Voice Guidance System
+
 
 A real-time assistive system designed to help visually impaired individuals navigate indoor environments. The system uses a custom-trained **YOLO** model designed over **YOLO11n** to detect household objects from a live webcam feed and announces their **position (left / ahead / right)** via text-to-speech.
 
@@ -115,7 +116,7 @@ pywin32           # Windows SAPI text-to-speech (win32com)
 
 3. **Prepare the dataset** (if training from scratch)
 
-   Place your images in `datasets/images/train/` and `datasets/images/val/`, and corresponding YOLO-format `.yaml` label files in `datasets/labels/`.
+   Place your images in `datasets/images/train/` and `datasets/images/val/`, and corresponding YOLO-format `.txt` label files in `datasets/labels/`.
 
 ---
 
@@ -145,7 +146,7 @@ model = YOLO(r"runs\detect\train<N>\weights\best.pt")
 python shravan.py
 ```
 
-- A window titled **"Blind Assistant"** will open showing the live webcam feed with bounding boxes.
+- A window titled **"Shravan"** will open showing the live webcam feed with bounding boxes.
 - Detected obstacles will be announced via speakers.
 - Press **`Q`** or **`ESC`** to quit.
 
@@ -190,10 +191,11 @@ Draw bounding boxes & display
 ## ⚠️ Known Limitations
 
 - **Windows only** — the TTS engine uses `win32com` (Windows SAPI). Linux/macOS users would need to swap to `pyttsx3` or another TTS backend.
-- **Single camera** — only supports webcam index `0` by default. Change `cv2.VideoCapture(0)` to use a different camera.
-- **No depth estimation** — direction is based solely on horizontal position; no distance information is provided.
-- **Detection Errors** - If more than one objects are present model could give wrong output.
+- **Poor Performance in Dark Rooms** — Webcam produces noisy frames in low light — more detections fall below the 50% confidence threshold
+- **No depth estimation** — Direction is based solely on horizontal position; no distance information is provided.
+- **No Object Tracking** - Each frame is processed independently — a fast-approaching person looks the same as a stationary one
 - **Detection Scope** - model could only detect limited objects
+- **Recall Gap** - 66.73% recall means 1 in 3 real objects are missed — more training data would improve this
 
 ---
 
