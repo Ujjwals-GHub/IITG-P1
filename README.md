@@ -24,7 +24,7 @@ A real-time assistive system designed to help visually impaired individuals navi
 
 ## 🔍 Overview
 
-This project was developed as **Term Project 1** for the IIT Guwahati course/internship. It was a collaborative team effort carried out by **Arpit** and **Ujjwal**. It combines computer vision and speech synthesis to create a low-latency assistive tool that:
+This project was developed as **Term Project 1** for the IIT Guwahati course/internship. It combines computer vision and speech synthesis to create a low-latency assistive tool that:
 
 1. Captures a live video stream from a webcam.
 2. Runs object detection using a fine-tuned YOLO model.
